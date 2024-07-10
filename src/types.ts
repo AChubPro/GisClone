@@ -52,3 +52,12 @@ export type MapObject = {
 };
 
 
+export interface MapObjectData {
+    id: number;
+    address: string;
+    marker: {
+        type: string;
+        coordinates: number[];
+    };
+    //  ...  остальные свойства
+}

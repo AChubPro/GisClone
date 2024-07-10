@@ -10,13 +10,13 @@ const ObjectPassport = () => {
     const {id} = useLocalSearchParams()
 
     const [objectData, setObjectData] = useState()
-
+    console.log('djdjdjdjdjdjddhirhiergoejroe')
 
     useEffect(() => {
         id && axios.get(`${Proxy}/sc-gis/api/v1/repair-work/${id}`).then(res => {
             console.log(res.data)
             setObjectData(res.data)
-console.warn('11111111')
+
         });
 
     }, [id])

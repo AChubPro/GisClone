@@ -21,8 +21,8 @@ const ListScreen: React.FC<ListScreenProps> = ({ selectedObjectId, onSelectObjec
                         data={item}
                         lang="nameRu"
                         Proxy={Proxy}
-                        isSelected={item.id === selectedObjectId}
-                        onSelectObject={onSelectObject} // 💡  Передаем onSelectObject в MapObjectListItem
+                        // isSelected={item.id === selectedObjectId}
+
                     />
                 )}
                 numColumns={1}

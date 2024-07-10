@@ -7,17 +7,21 @@ type MapObjectListItemProps = {
     data: MapObject;
     lang: string; // Используем тип Lang
     Proxy: string;
-    isSelected: boolean;
-    onPress: () => void;
+    // isSelected: boolean;
+
 };
-const MapObjectListItem = ({ data, lang, Proxy, isSelected, onPress }: MapObjectListItemProps) => {
+
+const MapObjectListItem = ({ data, lang, Proxy}: MapObjectListItemProps) => {
 const segments = useSegments()
-    console.log('segments', segments)
+
     return (
 
         <Link href={`/${segments[0]}/list/${data.id}`} asChild>
-            <View style={[styles.container_wrap, isSelected && styles.selected]}>
-                <Pressable onPress={onPress}>
+
+
+            <Pressable style={styles.container}>
+            <View style={[styles.container_wrap]}>
+
             <Text style={styles.title_name} numberOfLines={2} ellipsizeMode="tail">{data.address}</Text>
             <View style={styles.container}>
                 {data.subCategory && (
@@ -57,8 +61,9 @@ const segments = useSegments()
                     )}
                 </View>
             </View>
-                </Pressable>
+
             </View>
+            </Pressable>
         </Link>
     );
 };
